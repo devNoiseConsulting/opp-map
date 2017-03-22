@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="oppmap">
+
+<head>
+  <meta charset="utf-8">
+  <title>Opportunities Map</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <style>
+    .angular-google-map-container {
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body ng-controller="mapController">
+
+
+  <ui-gmap-google-map center="map.center" zoom="map.zoom">
+    <ui-gmap-markers models="markers" coords="'geo'" idkey="'id'" icon="'icon'" click="onClick" type="'cluster'">
+    </ui-gmap-markers>
+  </ui-gmap-google-map>
+  <div class="container">
+    <br>
+    <div ng-show="currentCompany" class="panel panel-default">
+      <div class="panel-heading">
+        <h1><a href="{{currentCompany.url}}" target="_blank">{{currentCompany.company}}</a></h1>
+        <p>{{currentCompany.address}}</p>
+      </div>
+      <div class="list-group">
+        <a ng-repeat="position in currentCompany.positions" class="list-group-item" href="{{listing.url}}">
+        {{position.title}}
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./bower_components/lodash/lodash.js"></script>
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src="./bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="./windows.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "opp-map",
+  "description": "Display job opportunities locations on a Google Maps widget.",
+  "main": "index.js",
+  "authors": [
+    "Michael J. Flynn"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "google",
+    "maps",
+    "opportunities"
+  ],
+  "homepage": "https://github.com/devNoiseConsulting/opp-map",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-google-maps": "~2.2.1"
+  }
+}

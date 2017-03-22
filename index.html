@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="oppmap">
+
+<head>
+  <meta charset="utf-8">
+  <title>Opportunities Map</title>
+  <style>
+    .angular-google-map-container {
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body ng-controller="mapController">
+
+
+  <ui-gmap-google-map center="map.center" zoom="map.zoom">
+    <ui-gmap-markers models="markers" coords="'coords'" idkey="'id'" icon="'icon'" type="'cluster'">
+    </ui-gmap-markers>
+  </ui-gmap-google-map>
+
+  <script src="./bower_components/lodash/lodash.js"></script>
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src="./bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>
